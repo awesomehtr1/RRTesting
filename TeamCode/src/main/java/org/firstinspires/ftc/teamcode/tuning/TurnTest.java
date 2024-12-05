@@ -21,16 +21,8 @@ public final class TurnTest extends LinearOpMode {
 
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
-                            .turn(Math.toRadians(192))
+                            .turn(Math.toRadians(190.5))
                             .build());
-
-            drive.updatePoseEstimate();
-
-            telemetry.addData("x", drive.pose.position.x);
-            telemetry.addData("y", drive.pose.position.y);
-            telemetry.addData("heading (deg)", Math.toDegrees(drive.pose.heading.toDouble()));
-            telemetry.update();
-
         } else if (TuningOpModes.DRIVE_CLASS.equals(SparkFunOTOSDrive.class)) {
             SparkFunOTOSDrive drive = new SparkFunOTOSDrive(hardwareMap, beginPose);
 
